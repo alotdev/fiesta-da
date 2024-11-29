@@ -31,6 +31,10 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
   const [dots, setDots] = useState(".");
 
   useEffect(() => {
+    const audio = document.getElementById("audio") as HTMLAudioElement;
+    if (audio) {
+      audio.play();
+    }
     const dotInterval = setInterval(() => {
       setDots((prevDots) => (prevDots.length < 3 ? prevDots + "." : "."));
     }, 1000);
@@ -74,6 +78,7 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
         src={Song}
         autoPlay
         controls
+        id="audio"
         className="absolute top-4 opacity-0"
       />
       <div
