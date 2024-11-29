@@ -78,6 +78,7 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
         src={Song}
         autoPlay
         controls
+        loop
         id="audio"
         className="absolute top-4 opacity-0"
       />
