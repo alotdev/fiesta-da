@@ -8,7 +8,7 @@ interface TimerProps {
 
 const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-12-13") - +new Date();
+    const difference = +new Date("2024-12-13T20:00:00") - +new Date();
     let timeLeft: { [key: string]: number } = {};
 
     if (difference > 0) {
