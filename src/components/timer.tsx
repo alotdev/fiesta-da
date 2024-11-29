@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 import Background from "../assets/bg.png";
-import Song from "../assets/song.mp3";
 
 interface TimerProps {
   onTimeUp: () => void;
@@ -31,20 +30,11 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
   const [dots, setDots] = useState(".");
 
   useEffect(() => {
-    const audio = document.getElementById("audio") as HTMLAudioElement;
-    const playAudio = () => {
-      if (audio) {
-        audio.play();
-      }
-    };
-
-    document.addEventListener("click", playAudio);
     const dotInterval = setInterval(() => {
       setDots((prevDots) => (prevDots.length < 3 ? prevDots + "." : "."));
     }, 1000);
 
     return () => {
-      document.removeEventListener("click", playAudio);
       clearInterval(dotInterval);
     };
   }, []);
@@ -80,60 +70,6 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
       className="flex flex-col justify-center items-center gap-4 w-full h-full bg-cover bg-center"
       style={{ backgroundImage: `url(${Background})` }}
     >
-      {/* PLAYER */}
-      <audio
-        src={Song}
-        autoPlay
-        controls
-        loop
-        id="audio"
-        className="absolute top-4 opacity-0"
-      />
-      <div
-        className="absolute top-4 p-4 bg-[#29b0dd] rounded-full cursor-pointer active:scale-95 transition"
-        onClick={() => {
-          const audio = document.querySelector("audio");
-          if (audio) {
-            if (audio.paused) {
-              audio.play();
-            } else {
-              audio.pause();
-            }
-          }
-        }}
-      >
-        {document.querySelector("audio")?.paused ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            width="24"
-            height="24"
-            stroke-width="1.5"
-          >
-            <path d="M7 4v16l13 -8z"></path>
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            width="24"
-            height="24"
-            stroke-width="1.5"
-          >
-            <path d="M6 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"></path>
-            <path d="M14 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"></path>
-          </svg>
-        )}
-      </div>
-
       {/* LOGO */}
       <img src={Logo} alt="Logo" className="w-64 sm:w-1/4" />
 
