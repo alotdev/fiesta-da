@@ -58,7 +58,7 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
       className="flex flex-col justify-center items-center w-screen h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${Background})` }}
     >
-      <img src={Logo} alt="Logo" className="w-64" />
+      <img src={Logo} alt="Logo" className="w-64 sm:w-1/3" />
       <div
         className="text-4xl sm:text-8xl font-bold text-transparent bg-clip-text"
         id="timer"
