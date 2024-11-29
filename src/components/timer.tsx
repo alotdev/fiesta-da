@@ -66,7 +66,7 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
 
   return (
     <div
-      className="flex flex-col justify-center items-center gap-4 w-full h-screen bg-cover bg-center"
+      className="flex flex-col justify-center items-center gap-4 w-full h-full bg-cover bg-center"
       style={{ backgroundImage: `url(${Background})` }}
     >
       {/* PLAYER */}
