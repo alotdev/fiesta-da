@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Logo from "../assets/logo.png";
+import Background from "../assets/bg.png";
 
 interface TimerProps {
   onTimeUp: () => void;
@@ -54,15 +56,14 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
   return (
     <div
       className="flex flex-col justify-center items-center w-screen h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('src/assets/bg.png')" }}
+      style={{ backgroundImage: `url(${Background})` }}
     >
-      <img src="src/assets/logo.png" alt="Logo" className="w-64" />
+      <img src={Logo} alt="Logo" className="w-64" />
       <div
         className="text-4xl sm:text-8xl font-bold text-transparent bg-clip-text"
         id="timer"
         style={{
-          backgroundImage: "linear-gradient(45deg, #dfe44e, #ef4b85)",
-          textShadow: "2px 2px 4px 10px #00000025",
+          backgroundImage: "linear-gradient(to top, #fa6bae, #e94b7e)",
         }}
       >
         {timerComponents.length ? timerComponents : <span>Time's up!</span>}
