@@ -32,14 +32,21 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
 
   useEffect(() => {
     const audio = document.getElementById("audio") as HTMLAudioElement;
-    if (audio) {
-      audio.play();
-    }
+    const playAudio = () => {
+      if (audio) {
+        audio.play();
+      }
+    };
+
+    document.addEventListener("click", playAudio);
     const dotInterval = setInterval(() => {
       setDots((prevDots) => (prevDots.length < 3 ? prevDots + "." : "."));
     }, 1000);
 
-    return () => clearInterval(dotInterval);
+    return () => {
+      document.removeEventListener("click", playAudio);
+      clearInterval(dotInterval);
+    };
   }, []);
 
   useEffect(() => {
