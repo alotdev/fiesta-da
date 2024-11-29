@@ -9,7 +9,7 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen">
+    <div className="h-dvh">
       {showTimer && <Timer onTimeUp={handleTimeUp} />}
       {!showTimer && (
         <div>

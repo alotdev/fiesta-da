@@ -7,14 +7,11 @@
   --font-fredoka: "Fredoka", sans-serif;
 }
 
-html {
-  font-family: var(--font-family);
-}
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
 #timer {
