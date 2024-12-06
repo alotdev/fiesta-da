@@ -7,7 +7,7 @@ import Form from "./assets/form.png";
 
 function App() {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-12-13T20:00:00") - +new Date();
+    const difference = +new Date("2024-12-13T23:00:00Z") - +new Date();
     let timeLeft: { [key: string]: number } = {};
 
     if (difference > 0) {
