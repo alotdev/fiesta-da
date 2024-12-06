@@ -119,14 +119,24 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
             className="w-full h-full object-contain"
           />
         </a>
-        <a className="w-14 h-14 p-2 rounded-full bg-[#dee679] hover:bg-[#e53f95] transition active:scale-95">
+        <a
+          href="https://open.spotify.com/playlist/4C5onquSSpLTwQrJ4JdqBJ?si=7W41R-MDSRqCDROh44f8mQ&pi=u-kIuQQ7p8RZyF&pt=e3e345b4e43a58a92054d09039c727b2"
+          target="_blank"
+          rel="noreferrer"
+          className="w-14 h-14 p-2 rounded-full bg-[#dee679] hover:bg-[#e53f95] transition active:scale-95"
+        >
           <img
             src={Spotify}
             alt="Spotify"
             className="w-full h-full object-contain"
           />
         </a>
-        <a className="w-14 h-14 p-2 rounded-full bg-[#dee679] hover:bg-[#e53f95] transition active:scale-95">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeKoLe48Fm4dFOxyjryQXj1UYha_b6Z-DY0exT3meJs8LKp_Q/viewform"
+          target="_blank"
+          rel="noreferrer"
+          className="w-14 h-14 p-2 rounded-full bg-[#dee679] hover:bg-[#e53f95] transition active:scale-95"
+        >
           <img src={Form} alt="Form" className="w-full h-full object-contain" />
         </a>
       </div>
