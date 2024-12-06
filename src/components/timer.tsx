@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 import Background from "../assets/bg.png";
+import Location from "../assets/location.png";
+import Spotify from "../assets/spotify.png";
+import Form from "../assets/form.png";
 
 interface TimerProps {
   onTimeUp: () => void;
@@ -111,24 +114,20 @@ const Timer: React.FC<TimerProps> = ({ onTimeUp }) => {
           className="w-14 h-14 p-2 rounded-full bg-[#dee679] hover:bg-[#e53f95] transition active:scale-95"
         >
           <img
-            src="src/assets/location.png"
+            src={Location}
             alt="Location"
             className="w-full h-full object-contain"
           />
         </a>
         <a className="w-14 h-14 p-2 rounded-full bg-[#dee679] hover:bg-[#e53f95] transition active:scale-95">
           <img
-            src="src/assets/spotify.png"
-            alt="Location"
+            src={Spotify}
+            alt="Spotify"
             className="w-full h-full object-contain"
           />
         </a>
         <a className="w-14 h-14 p-2 rounded-full bg-[#dee679] hover:bg-[#e53f95] transition active:scale-95">
-          <img
-            src="src/assets/form.png"
-            alt="Location"
-            className="w-full h-full object-contain"
-          />
+          <img src={Form} alt="Form" className="w-full h-full object-contain" />
         </a>
       </div>
     </div>
