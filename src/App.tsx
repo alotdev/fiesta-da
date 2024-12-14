@@ -142,7 +142,7 @@ function App() {
         {/* WHEN TIME IS OVER SHOW THIS ICON */}
         {!timerComponents.length && (
             <button
-            onClick={() => window.open('/fiesta-da/Premios.pdf', '_blank')}
+            onClick={() => window.open('/fiesta-da/Premios.pdf')}
             className="w-14 h-14 p-2 rounded-full bg-[#dee679] hover:bg-[#e53f95] transition active:scale-95"
             >
             <svg
